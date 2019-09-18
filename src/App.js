@@ -1,23 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
+// import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 
 import UserInput from './UserInput/UserInput';
 import UserOutput from './UserOutput/UserOutput';
 
-function App() {
+
+
+
+class App extends Component {
+  state = {
+    username: 'superjames'
+  }
+
+  render() {
   return (
     <div className="App">
       <header className="App-header">
-      <UserInput />
-      <UserOutput />
-      <UserOutput />
-      <UserOutput />
+        <UserInput />
+        <UserOutput userName={this.state.username} />
+        <UserOutput userName={this.state.username} />
+        <UserOutput userName="James" />
     
       </header>
      
     </div>
   );
+}
 }
 
 export default App;
