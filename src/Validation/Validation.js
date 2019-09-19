@@ -8,6 +8,7 @@ const validation = (props) => {
             <p>Text long enough</p> :
             <p>Text too short!</p>
             }
+        
         </div>
     );
 }
