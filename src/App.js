@@ -2,28 +2,26 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import UserInput from './UserInput/UserInput';
-import UserOutput from './UserOutput/UserOutput';
-
-
-
-
 class App extends Component {
-  state = {
-    username: 'superjames'
-  }
+state = {
+  userInput: ''
+}
 
-  render() {
+inputChangedHandler = (event) => {
+  this.setState({userInput: event.target.value});
+}
+
+render() {
   return (
     <div className="App">
-      <header className="App-header">
-        <UserInput />
-        <UserOutput userName={this.state.username} />
-        <UserOutput userName={this.state.username} />
-        <UserOutput userName="James" />
-    
-      </header>
-     
+
+
+     <hr />
+     <input 
+     type="text" 
+     onChange={this.inputChangedHandler} 
+     value={this.state.userInput} />
+     <p>{this.state.userInput}</p>
     </div>
   );
 }
